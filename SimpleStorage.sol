@@ -1,19 +1,18 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-/// @title Простой контракт для хранения числа
-/// @notice Позволяет сохранять и считывать число с эмиссией событий
-contract SimpleStorage {
-    /// @notice Сохраненное значение
-    /// @dev Public автоматически создает getter-функцию myNumber()
-    uint256 public myNumber;
+import "forge-std/Test.sol";
+import "../contracts/SimpleStorage.sol";
 
-    /// @notice Событие, вызываемое при изменении числа
-    event NumberUpdated(address indexed setter, uint256 newNumber);
+contract SimpleStorageTest is Test {
+    SimpleStorage public storageContract;
 
-    /// @notice Сохраняет новое число в блокчейн
-    /// @param _number Новое значение для записи
-    function setNumber(uint256 _number) external {
-        myNumber = _number;
-        emit NumberUpdated(msg.sender, _number);
+    function setUp() public {
+        storageContract = new SimpleStorage();
+    }
+
+    function test_SetNumber() public {
+        storageContract.setNumber(42);
+        assertEq(storageContract.myNumber(), 42);
     }
 }
