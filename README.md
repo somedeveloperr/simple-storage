@@ -1,2 +1,13 @@
-# simple-storage
-My first smart contract in Solidity for practice
+# SimpleStorage Smart Contract
+
+Простой смарт-контракт на Solidity для записи и чтения числа в блокчейне с эмиссией событий.
+
+## Функционал
+- Запись значения `uint256` через функцию `setNumber()`
+- Чтение значения через автоматический getter `myNumber()`
+- Генерация события `NumberUpdated` при каждом изменении
+
+## Локальный запуск
+1. Клонировать репозиторий: `git clone <ссылка>`
+2. Установить зависимости Foundry: `forge install`
+3. Запустить тесты: `forge test`
