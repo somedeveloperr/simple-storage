@@ -1,13 +1,20 @@
-# SimpleStorage Smart Contract
+# Foundry Smart Contract & Test Suite
 
-Простой смарт-контракт на Solidity для записи и чтения числа в блокчейне с эмиссией событий.
+A modular Solidity project built with Foundry, featuring automated unit testing and fuzz testing for robust state management.
 
-## Функционал
-- Запись значения `uint256` через функцию `setNumber()`
-- Чтение значения через автоматический getter `myNumber()`
-- Генерация события `NumberUpdated` при каждом изменении
+## Tech Stack
+- Solidity ^0.8.20
+- Foundry (Forge, Cast, Anvil)
 
-## Локальный запуск
-1. Клонировать репозиторий: `git clone <ссылка>`
-2. Установить зависимости Foundry: `forge install`
-3. Запустить тесты: `forge test`
+## Getting Started
+
+### Prerequisites
+Install Foundry:
+```bash
+curl -L [https://foundry.paradigm.xyz](https://foundry.paradigm.xyz) | bash
+foundryup
+
+git clone [https://github.com/your-username/solidity-foundry-suite.git](https://github.com/your-username/solidity-foundry-suite.git)
+cd solidity-foundry-suite
+forge build
+forge test -vvv
